@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import TodoList from './TodoList';
 
 class App extends Component{
   constructor(props) {
@@ -19,22 +20,28 @@ componentWillMount() {
     this.callAPI();
 };
 
+fruits = ['Apple', 'Mengo', 'Orange', 'Banana', 'Cherry', 'Kiwi'];
+
+  removeFruit(fruits) {
+    alert(fruits)
+  }
+
 render() {
   return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <ul>
+        {this.fruits.map((item) => (
+          <li>
+            <button onClick={() => this.removeFruit(item)}>
+              Click Here
+            </button>
+          </li>
+        ))}
+      </ul>
+      <TodoList />
+          
           <p className="App-intro">;{this.state.apiResponse}</p>
         </header>
       </div>
