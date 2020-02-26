@@ -11,10 +11,12 @@ Pour des raisons d'apprentissage nous avons choisie :
 
 ## Obtenir le projet
 Placer vous dans un repertoire:
-écrivez dans la ligne de commande 
+Puis écrivez dans la ligne de commande 
 ```git flow init``` 
-puis 
+et enfin ecrivez : 
 ```git clone https://github.com/barder60/dockerReactTrello.git```
+et lancer le projet via la commande : 
+```docker-compose start```
 
 ## Emplacement du script
 
