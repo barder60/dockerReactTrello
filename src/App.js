@@ -8,12 +8,13 @@ import './App.css';
 
 function App() {
   const [tasks, loading] = useFetch("http://localhost:9000/showAllTasks");
-
+  // const [newTask, loading] = 
   return (
 
     <div className="App">
     <header className="App-header">
     <h1>Ma todo List</h1>
+
     {loading ? ("Chargement...") : (
       <ul className="list-group">
       {tasks && tasks.map((task,index) =>(
