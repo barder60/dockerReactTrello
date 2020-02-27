@@ -1,6 +1,7 @@
+# Front
 Notre groupe a choisie d'utiliser le project venant de la commande npx create-react-app , liens vers la source -> [Create React App](https://github.com/facebook/create-react-app)
 
-# Les choix technique du projet
+## Les choix technique du projet
 Pour des raisons d'apprentissage nous avons choisie :
 
 * Front : en React car il s'agit d'une technologie qui m'interrésait et simple d'installation.

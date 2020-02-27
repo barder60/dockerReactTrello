@@ -5,15 +5,42 @@ import './App.css';
 
 
 
-
 function App() {
   const [tasks, loading] = useFetch("http://localhost:9000/showAllTasks");
-  // const [newTask, loading] = 
-  return (
+  const [name, setName] = useState('')
 
+  
+  const submit = e => {
+    console.log(e)
+    e.preventDefault()
+    e = e + '' 
+    try{
+      const req = fetch(`http://localhost:9000/addTasks`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name:e}),
+      })
+    }catch(err){
+      console.log(err);
+    };
+  }
+  return (
     <div className="App">
     <header className="App-header">
     <h1>Ma todo List</h1>
+   
+    <form onSubmit={submit}>
+    {/* register your input into the hook by invoking the "register" function */}
+    <input
+        name="name"
+        value={name}
+        onChange={e => setName(e.target.value)}
+       />
+      
+      <input type="submit" value="Submit"/>
+    </form>
 
     {loading ? ("Chargement...") : (
       <ul className="list-group">
